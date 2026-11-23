@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ark Printers — We Create. We Design. We Print. We Brand. | Malakia, Juba</title>
+<meta name="description" content="Ark Printers in Malakia, Juba: designing, printing, branding and advertising. T-shirts, banners, stoles, flags, receipt books and more.">
+<meta name="theme-color" content="#0b1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@property --gap{syntax:'<length>';inherits:true;initial-value:34px}
+:root{
+  --red:#e02b20;--orange:#f7941d;--navy:#0b1020;--ink:#141a33;--cream:#fff6e9;
+  --cyan:#00aeef;--mag:#ec008c;--yel:#ffd800;
+  --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;
+  --body:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:#fff;font-family:var(--body);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1;letter-spacing:-.02em}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700;display:flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--orange)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:700;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700;transition:transform .25s,box-shadow .25s,background .25s}
+.btn.primary{background:linear-gradient(135deg,var(--red),var(--orange));box-shadow:0 10px 30px -8px rgba(224,43,32,.7)}
+.btn.primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 18px 36px -8px rgba(247,148,29,.7)}
+.btn.ghost{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04)}
+.btn.ghost:hover{background:#fff;color:var(--navy);transform:translateY(-3px)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,backdrop-filter .3s}
+nav.stuck{background:rgba(11,16,32,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:.02em}
+.logo i{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px var(--red)}
+.logo i svg{width:24px}
+.logo small{display:block;font-family:var(--body);font-weight:500;font-size:.58rem;letter-spacing:.2em;color:var(--orange);margin-top:-2px}
+.links{display:flex;gap:2rem;align-items:center;font-weight:500;font-size:.95rem}
+.links a:not(.btn){opacity:.8;position:relative}
+.links a:not(.btn):hover{opacity:1}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--orange);transition:width .3s}
+.links a:not(.btn):hover::after{width:100%}
+.links .btn{padding:.6rem 1.2rem}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;
+  background:radial-gradient(60% 60% at 75% 40%,rgba(224,43,32,.28),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(0,174,239,.18),transparent 70%),var(--navy)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(70% 70% at 60% 50%,#000,transparent);-webkit-mask-image:radial-gradient(70% 70% at 60% 50%,#000,transparent)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.6vw,6rem);font-weight:800;margin:1.2rem 0 1.4rem}
+.hero h1 span{display:block}
+.hero h1 .w1{color:#fff}.hero h1 .w2{color:var(--orange)}.hero h1 .w3{color:var(--cyan)}.hero h1 .w4{color:var(--mag)}
+.hero p.lead{font-size:1.15rem;max-width:34ch;opacity:.8;margin-bottom:2rem}
+.hero .cta{display:flex;gap:1rem;flex-wrap:wrap}
+.hero .meta{margin-top:2.6rem;display:flex;gap:2rem;flex-wrap:wrap;font-size:.85rem;opacity:.75}
+.hero .meta b{display:block;font-family:var(--display);font-size:1.5rem;color:#fff;opacity:1}
+
+.stage{perspective:1400px;height:min(620px,70vh);position:relative;display:grid;place-items:center}
+.scene{position:relative;width:340px;height:460px;transform-style:preserve-3d;transform:rotateX(var(--rx,58deg)) rotateZ(var(--rz,-32deg));transition:transform .15s ease-out;animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{--gap:30px}50%{--gap:52px}}
+.sheet{position:absolute;inset:0;border-radius:16px;transform:translateZ(calc(var(--i)*var(--gap)));box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 30px 60px -10px rgba(0,0,0,.6);overflow:hidden}
+.sheet.c{background:linear-gradient(145deg,#2fc6ff,#0094d6)}
+.sheet.m{background:linear-gradient(145deg,#ff3aa8,#d4007c)}
+.sheet.y{background:linear-gradient(145deg,#ffe83a,#f2c200)}
+.sheet.k{background:linear-gradient(145deg,#2b2f45,#0e1120)}
+.sheet.top{background:#fff8ee;color:var(--navy);padding:26px;display:flex;flex-direction:column;justify-content:space-between}
+.sheet svg.reg{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);opacity:.55}
+.poster-top{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800}
+.poster-top i{width:42px;height:42px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.poster-top i svg{width:26px}
+.poster-big{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:.95;letter-spacing:-.03em}
+.poster-big em{font-style:normal;color:var(--red)}
+.poster-bar{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--cyan) 0 25%,var(--mag) 25% 50%,var(--yel) 50% 75%,#111 75%)}
+.poster-foot{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between}
+.shadow{position:absolute;width:420px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);transform:translateZ(-40px) translateY(60px);filter:blur(8px)}
+.float{position:absolute;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.float.f1{width:54px;height:54px;top:6%;left:2%;--t:translateZ(150px)}
+.float.f2{width:36px;height:36px;bottom:10%;right:4%;animation-duration:9s;--t:translateZ(190px)}
+.float.f3{width:28px;height:28px;top:42%;right:-8%;animation-duration:11s;animation-direction:reverse;--t:translateZ(230px)}
+@keyframes spin{from{transform:var(--t) rotateX(0) rotateY(0)}to{transform:var(--t) rotateX(360deg) rotateY(360deg)}}
+.float b{position:absolute;inset:0;border:2px solid rgba(255,255,255,.7);background:rgba(255,255,255,.08)}
+.float.f1 b{background:rgba(224,43,32,.6)}.float.f2 b{background:rgba(0,174,239,.6)}.float.f3 b{background:rgba(255,216,0,.7)}
+.float b:nth-child(1){transform:translateZ(calc(var(--s,27px)))}
+.float b:nth-child(2){transform:rotateY(180deg) translateZ(var(--s,27px))}
+.float b:nth-child(3){transform:rotateY(90deg) translateZ(var(--s,27px))}
+.float b:nth-child(4){transform:rotateY(-90deg) translateZ(var(--s,27px))}
+.float b:nth-child(5){transform:rotateX(90deg) translateZ(var(--s,27px))}
+.float b:nth-child(6){transform:rotateX(-90deg) translateZ(var(--s,27px))}
+.f2{--s:18px}.f3{--s:14px}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.5;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-hint::after{content:"";width:1px;height:34px;background:linear-gradient(#fff,transparent);animation:drip 1.6s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* MARQUEE */
+.marquee{background:linear-gradient(90deg,var(--red),var(--orange));padding:1rem 0;overflow:hidden;transform:rotate(-1.2deg);margin:-20px -2vw 0;position:relative;z-index:3;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.marquee div{display:flex;gap:3rem;white-space:nowrap;width:max-content;animation:slide 28s linear infinite;font-family:var(--display);font-weight:800;font-size:1.5rem;text-transform:uppercase}
+.marquee span::after{content:"✦";margin-left:3rem;opacity:.7}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{position:relative}
+.pad{padding:130px 0}
+.sec-head{max-width:760px;margin-bottom:60px}
+.sec-head h2{font-size:clamp(2.2rem,5vw,4rem);margin:1rem 0}
+.sec-head p{opacity:.7;font-size:1.08rem}
+
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;perspective:1200px}
+.card{position:relative;padding:34px 26px 30px;border-radius:22px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);transform-style:preserve-3d;transition:transform .15s ease-out,border-color .3s;min-height:320px;overflow:hidden}
+.card:hover{border-color:rgba(247,148,29,.6)}
+.card .glare{position:absolute;inset:0;background:radial-gradient(260px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover .glare{opacity:1}
+.card .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;margin-bottom:60px;transform:translateZ(50px);box-shadow:0 14px 26px -8px rgba(0,0,0,.6)}
+.card:nth-child(1) .ico{background:var(--orange)}.card:nth-child(2) .ico{background:var(--cyan)}.card:nth-child(3) .ico{background:var(--red)}.card:nth-child(4) .ico{background:var(--mag)}
+.card h3{font-size:1.7rem;margin-bottom:.7rem;transform:translateZ(36px)}
+.card p{opacity:.72;font-size:.97rem;transform:translateZ(20px)}
+.card .num{position:absolute;right:18px;top:6px;font-family:var(--display);font-weight:800;font-size:5.5rem;color:rgba(255,255,255,.05);transform:translateZ(10px)}
+
+/* RING */
+.ring-sec{background:linear-gradient(180deg,var(--navy),#111736 50%,var(--navy));overflow:hidden}
+.ring-stage{height:520px;perspective:1300px;display:grid;place-items:center;cursor:grab;touch-action:pan-y;user-select:none}
+.ring-stage:active{cursor:grabbing}
+.ring{position:relative;width:230px;height:300px;transform-style:preserve-3d}
+.panel{position:absolute;inset:0;border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(160deg,#fff8ee,#ffe9cf);color:var(--navy);box-shadow:0 25px 50px -15px rgba(0,0,0,.7);backface-visibility:hidden}
+.panel svg{width:100%;height:190px}
+.panel b{font-family:var(--display);font-size:1.25rem;line-height:1.05}
+.panel small{display:block;font-size:.74rem;opacity:.6;margin-top:3px}
+.ring-hint{text-align:center;opacity:.55;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}
+
+/* PROCESS */
+.process{height:420vh}
+.process .sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(50% 60% at 70% 50%,rgba(247,148,29,.14),transparent 70%)}
+.process .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.steps{position:relative;min-height:340px}
+.step{position:absolute;inset:0;opacity:0;transform:translateY(30px);transition:opacity .5s,transform .5s;pointer-events:none}
+.step.on{opacity:1;transform:none;pointer-events:auto}
+.step .n{font-family:var(--display);font-weight:800;font-size:1rem;color:var(--orange);letter-spacing:.2em}
+.step h3{font-size:clamp(3rem,7vw,6rem);margin:.6rem 0 1rem}
+.step p{font-size:1.15rem;opacity:.78;max-width:36ch}
+.dots{display:flex;gap:10px;margin-top:2.2rem}
+.dots i{width:34px;height:5px;border-radius:3px;background:rgba(255,255,255,.2);transition:background .3s,width .3s}
+.dots i.on{background:var(--orange);width:64px}
+.cube-stage{perspective:1400px;height:420px;display:grid;place-items:center}
+.cube{position:relative;width:260px;height:260px;transform-style:preserve-3d}
+.face{position:absolute;inset:0;display:grid;place-items:center;text-align:center;border-radius:12px;border:2px solid rgba(255,255,255,.35);font-family:var(--display);font-weight:800;font-size:2rem;box-shadow:inset 0 0 60px rgba(0,0,0,.25)}
+.face em{display:block;font-style:normal;font-size:4.6rem;margin-bottom:.2rem}
+.face:nth-child(1){transform:translateZ(130px);background:linear-gradient(145deg,#ffb347,#f7741d)}
+.face:nth-child(2){transform:rotateY(90deg) translateZ(130px);background:linear-gradient(145deg,#2fc6ff,#0070b8)}
+.face:nth-child(3){transform:rotateY(180deg) translateZ(130px);background:linear-gradient(145deg,#ff4a3d,#b3130a)}
+.face:nth-child(4){transform:rotateY(-90deg) translateZ(130px);background:linear-gradient(145deg,#ff3aa8,#7b0b66)}
+.face:nth-child(5){transform:rotateX(90deg) translateZ(130px);background:#141a33}
+.face:nth-child(6){transform:rotateX(-90deg) translateZ(130px);background:#141a33}
+
+/* ABOUT / WHY */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why div{padding:32px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.why h3{font-size:1.5rem;margin:.8rem 0 .5rem}
+.why p{opacity:.7}
+.why span{font-size:2rem}
+
+/* CONTACT */
+.contact{background:linear-gradient(160deg,#1a0f1f,var(--navy) 60%)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.contact h2{font-size:clamp(2.4rem,5vw,4.4rem);margin:1rem 0 1.2rem}
+.contact p.lead{opacity:.75;margin-bottom:2rem;max-width:40ch}
+.info{display:grid;gap:14px}
+.info a,.info div{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:transform .25s,border-color .25s}
+.info a:hover{transform:translateX(8px);border-color:var(--orange)}
+.info span.i{font-size:1.4rem;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--red),var(--orange));display:grid;place-items:center;flex:none}
+.info small{display:block;opacity:.55;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+form{padding:34px;border-radius:26px;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.14);display:grid;gap:16px;transform:perspective(1200px) rotateY(-4deg);transition:transform .4s}
+form:hover,form:focus-within{transform:perspective(1200px) rotateY(0)}
+form h3{font-size:1.8rem}
+label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;display:grid;gap:6px}
+input,select,textarea{font:inherit;color:#fff;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:.85rem 1rem;outline:none;text-transform:none;letter-spacing:0}
+input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(247,148,29,.25)}
+select option{color:#000}
+textarea{min-height:96px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+footer{padding:46px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;opacity:.85}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer .tag{font-family:var(--display);font-weight:800;color:var(--orange)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero .wrap,.process .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero{padding-top:100px}
+  .stage{height:430px}.scene{width:250px;height:340px}.shadow{width:300px}
+  .poster-big{font-size:1.9rem}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:1fr}
+  .links a{display:none}
+  .burger{display:block}
+  .links.open{position:absolute;top:74px;left:0;right:0;background:rgba(11,16,32,.96);flex-direction:column;padding:24px;gap:1.2rem}
+  .links.open a{display:block}
+  .links.open .btn{display:inline-flex;justify-content:center}
+  .cube{width:190px;height:190px}
+  .face{font-size:1.4rem}.face em{font-size:3.2rem}
+  .face:nth-child(1){transform:translateZ(95px)}.face:nth-child(2){transform:rotateY(90deg) translateZ(95px)}.face:nth-child(3){transform:rotateY(180deg) translateZ(95px)}.face:nth-child(4){transform:rotateY(-90deg) translateZ(95px)}
+  .cube-stage{height:260px;order:-1}.process .wrap{gap:0}
+  .steps{min-height:280px}.step h3{font-size:3.2rem}
+  .process .sticky{padding-top:60px}
+  .ring-stage{height:440px}
+  .ring{width:190px;height:260px}
+  .panel svg{height:150px}
+}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr}.hero .meta{gap:1.2rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Ark Printers home">
+      <i><svg viewBox="0 0 40 40"><path d="M20 4 L36 36 H28 L20 19 L12 36 H4 Z" fill="#f7941d"/><path d="M12 36 L20 19 L24 27 L16 36Z" fill="#e02b20"/></svg></i>
+      <span>ARK PRINTERS<small>DESIGN · PRINT · BRAND</small></span>
+    </a>
+    <div class="links" id="links">
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn primary">Get a Quote</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="ink"></canvas>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Malakia · Juba · South Sudan 🇸🇸</div>
+      <h1><span class="w1">We Create.</span><span class="w2">We Design.</span><span class="w3">We Print.</span><span class="w4">We Brand.</span></h1>
+      <p class="lead">Your one-stop print shop for banners, T-shirts, stoles, flags, receipt books and everything that makes your brand impossible to miss.</p>
+      <div class="cta">
+        <a href="#contact" class="btn primary">Start your order →</a>
+        <a href="tel:+211921004501" class="btn ghost">📞 +211 921 004 501</a>
+      </div>
+      <div class="meta">
+        <div><b>4</b>core services</div>
+        <div><b>1</b>roof, idea to finished print</div>
+        <div><b>Walk-in</b>welcome at Malakia</div>
+      </div>
+    </div>
+
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="scene" id="scene">
+        <div class="shadow"></div>
+        <div class="sheet c" style="--i:0"><svg class="reg" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#fff" fill="none" stroke-width=".5"><circle cx="50" cy="50" r="3"/><path d="M50 40v20M40 50h20"/></g></svg></div>
+        <div class="sheet m" style="--i:1"></div>
+        <div class="sheet y" style="--i:2"></div>
+        <div class="sheet k" style="--i:3"></div>
+        <div class="sheet top" style="--i:4">
+          <div class="poster-top"><i><svg viewBox="0 0 40 40"><path d="M20 4 L36 36 H28 L20 19 L12 36 H4 Z" fill="#fff"/></svg></i>ARK PRINTERS</div>
+          <div class="poster-big">We<br>Print.<br><em>We Brand.</em></div>
+          <div>
+            <div class="poster-bar"></div>
+            <div class="poster-foot" style="margin-top:10px"><span>Malakia, Juba</span><span>+211 921 004 501</span></div>
+          </div>
+        </div>
+        <div class="float f1"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <div class="float f2"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <div class="float f3"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>T-Shirt Printing</span><span>Roll-up Banners</span><span>Graduation Stoles</span><span>Flags</span><span>Receipt Books</span><span>Stickers & Labels</span><span>Business Cards</span><span>Large Format</span>
+  <span>T-Shirt Printing</span><span>Roll-up Banners</span><span>Graduation Stoles</span><span>Flags</span><span>Receipt Books</span><span>Stickers & Labels</span><span>Business Cards</span><span>Large Format</span>
+</div></div>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>Four moves. One finished brand.</h2>
+      <p>From the first sketch to the last pressed shirt, everything happens under one roof in Malakia.</p>
+    </div>
+    <div class="cards">
+      <article class="card tilt reveal"><div class="glare"></div><span class="num">01</span><div class="ico">💡</div><h3>Create</h3><p>Ideas, concepts and layouts. Tell us what you want to say and we shape it into something people remember.</p></article>
+      <article class="card tilt reveal"><div class="glare"></div><span class="num">02</span><div class="ico">🎨</div><h3>Design</h3><p>Logos, posters, flyers, shirt artwork and brand kits, made by designers who proof every detail, even the spelling.</p></article>
+      <article class="card tilt reveal"><div class="glare"></div><span class="num">03</span><div class="ico">🖨️</div><h3>Print</h3><p>Large-format, heat-press, lamination and book printing on professional machines for crisp, vivid output.</p></article>
+      <article class="card tilt reveal"><div class="glare"></div><span class="num">04</span><div class="ico">📣</div><h3>Brand</h3><p>Uniforms, banners, flags and signage that put your name everywhere your customers look.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad ring-sec" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What we print</div>
+      <h2>Spin the showroom.</h2>
+      <p>Drag, swipe or just watch. Every product below is made in-house.</p>
+    </div>
+  </div>
+  <div class="ring-stage" id="ringStage"><div class="ring" id="ring"></div></div>
+  <div class="ring-hint">← drag to rotate →</div>
+</section>
+
+<section class="process" id="process">
+  <div class="sticky">
+    <div class="wrap">
+      <div class="steps" id="steps">
+        <div class="step on"><div class="n">STEP 01</div><h3>Create</h3><p>You bring the idea, the occasion or the logo. We listen, sketch and agree the plan.</p></div>
+        <div class="step"><div class="n">STEP 02</div><h3>Design</h3><p>We build your artwork and send it for approval. Names, colors and spelling get checked before anything is pressed.</p></div>
+        <div class="step"><div class="n">STEP 03</div><h3>Print</h3><p>Large-format printer, heat press, laminator: your job goes onto the right machine at the right quality.</p></div>
+        <div class="step"><div class="n">STEP 04</div><h3>Brand</h3><p>Finished, trimmed and ready. You pick up in Malakia and put your brand to work.</p></div>
+        <div class="dots" id="dots" style="position:absolute;bottom:0"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="cube-stage" aria-hidden="true">
+        <div class="cube" id="cube">
+          <div class="face"><div><em>💡</em>CREATE</div></div>
+          <div class="face"><div><em>🎨</em>DESIGN</div></div>
+          <div class="face"><div><em>🖨️</em>PRINT</div></div>
+          <div class="face"><div><em>📣</em>BRAND</div></div>
+          <div class="face"></div><div class="face"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why Ark</div>
+      <h2>Built for Juba's businesses, schools and events.</h2>
+    </div>
+    <div class="why">
+      <div class="reveal"><span>⚡</span><h3>Everything in one place</h3><p>Design and production under one roof means fewer trips, fewer mistakes and faster turnaround.</p></div>
+      <div class="reveal"><span>🔎</span><h3>Proofed before pressed</h3><p>We confirm names, spelling and colors with you before the heat press ever closes.</p></div>
+      <div class="reveal"><span>🎓</span><h3>Big jobs, small jobs</h3><p>One custom shirt or a full event: church celebrations, graduations, corporate uniforms and shop signage.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Let's make it</div>
+      <h2>Tell us what to print.</h2>
+      <p class="lead">Send your request and we'll reply with a quote. Or just walk in and see the machines at work.</p>
+      <div class="info">
+        <a href="tel:+211921004501"><span class="i">📞</span><div><small>Call</small>+211 921 004 501</div></a>
+        <a href="tel:+211921004502"><span class="i">📞</span><div><small>Call</small>+211 921 004 502</div></a>
+        <a href="https://www.tiktok.com/@ark.printers" target="_blank" rel="noopener"><span class="i">🎬</span><div><small>TikTok</small>@ark.printers</div></a>
+        <div><span class="i">📍</span><div><small>Visit</small>Malakia, Juba, South Sudan</div></div>
+      </div>
+    </div>
+    <form id="quote" class="reveal">
+      <h3>Request a quote</h3>
+      <div class="row">
+        <label>Your name<input name="name" required placeholder="e.g. Achol"></label>
+        <label>Quantity<input name="qty" placeholder="e.g. 50"></label>
+      </div>
+      <label>What do you need?
+        <select name="item">
+          <option>T-shirt printing</option><option>Roll-up banner</option><option>Large-format banner / poster</option><option>Graduation stoles</option><option>Flags</option><option>Receipt / invoice books</option><option>Business cards</option><option>Stickers & labels</option><option>Logo & brand design</option><option>Something else</option>
+        </select>
+      </label>
+      <label>Details<textarea name="msg" placeholder="Sizes, colors, text, deadline…"></textarea></label>
+      <button class="btn primary" type="submit">Send on WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="tag">Ark Printers</span> · We Create. We Design. We Print. We Brand.</div>
+    <div>Malakia, Juba 🇸🇸 · © <span id="yr"></span></div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+$('#yr').textContent=new Date().getFullYear();
+
+/* nav */
+const nav=$('#nav');
+addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>30),{passive:true});
+$('#burger').onclick=()=>$('#links').classList.toggle('open');
+$$('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('open'));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+
+/* hero 3D tilt */
+const hero=$('.hero'),scene=$('#scene');
+let tx=58,tz=-32;
+hero.addEventListener('pointermove',e=>{
+  const r=hero.getBoundingClientRect();
+  const nx=(e.clientX-r.left)/r.width-.5, ny=(e.clientY-r.top)/r.height-.5;
+  scene.style.setProperty('--rx',(52+ny*-26+8)+'deg');
+  scene.style.setProperty('--rz',(-32+nx*40)+'deg');
+});
+hero.addEventListener('pointerleave',()=>{scene.style.setProperty('--rx','58deg');scene.style.setProperty('--rz','-32deg')});
+
+/* ink particles */
+const cv=$('#ink'),cx=cv.getContext('2d');
+let W,H,parts=[];
+const cols=['#00aeef','#ec008c','#ffd800','#f7941d','#e02b20'];
+function size(){W=cv.width=hero.clientWidth;H=cv.height=hero.clientHeight;parts=Array.from({length:Math.round(W*H/22000)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*5+1.5,c:cols[Math.random()*cols.length|0],vy:Math.random()*.4+.1,vx:(Math.random()-.5)*.3,a:Math.random()*.5+.2,p:Math.random()*6}))}
+size();addEventListener('resize',size);
+let mx=-999,my=-999;
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+(function loop(t){
+  cx.clearRect(0,0,W,H);
+  for(const p of parts){
+    p.y-=p.vy;p.x+=p.vx+Math.sin(t/1500+p.p)*.2;
+    const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);
+    if(d<120){p.x+=dx/d*2;p.y+=dy/d*2}
+    if(p.y<-10){p.y=H+10;p.x=Math.random()*W}
+    cx.globalAlpha=p.a;cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill();
+  }
+  requestAnimationFrame(loop);
+})(0);
+
+/* card tilt */
+$$('.tilt').forEach(c=>{
+  c.addEventListener('pointermove',e=>{
+    const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.transform=`rotateY(${(x-.5)*22}deg) rotateX(${(.5-y)*22}deg) translateZ(10px)`;
+    c.style.setProperty('--gx',x*100+'%');c.style.setProperty('--gy',y*100+'%');
+  });
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+/* product ring */
+const ink='#141a33';
+const P=[
+ ['T-shirts','Custom heat-press printing',`<path d="M60 30 L85 40 Q100 54 115 40 L140 30 L176 60 L156 86 L140 76 L140 168 L60 168 L60 76 L44 86 L24 60 Z" fill="#e02b20"/><circle cx="100" cy="105" r="22" fill="#fff"/><path d="M100 90 L111 119 H105 L100 108 L95 119 H89Z" fill="#f7941d"/>`],
+ ['Roll-up banners','Stand out at any event',`<rect x="62" y="14" width="76" height="140" rx="5" fill="#00aeef"/><rect x="72" y="28" width="56" height="10" rx="3" fill="#fff"/><rect x="72" y="46" width="40" height="6" rx="3" fill="#fff" opacity=".7"/><circle cx="100" cy="100" r="22" fill="#ffd800"/><rect x="42" y="154" width="116" height="14" rx="7" fill="${ink}"/>`],
+ ['Graduation stoles','Printed sashes & stoles',`<path d="M64 16 L100 40 L136 16 L158 32 L124 68 L134 180 L100 190 L66 180 L76 68 L42 32Z" fill="#141a33"/><path d="M92 60 L108 60 L112 180 L100 186 L88 180Z" fill="#f7941d"/><path d="M76 68 L124 68" stroke="#ffd800" stroke-width="5"/>`],
+ ['Flags','Event & organisation flags',`<rect x="38" y="14" width="7" height="176" rx="3" fill="${ink}"/><path d="M45 24 Q85 4 115 24 T182 24 L182 108 Q148 128 115 108 T45 108Z" fill="#ec008c"/><circle cx="112" cy="66" r="20" fill="#fff"/>`],
+ ['Receipt books','Duplicate & triplicate books',`<rect x="48" y="36" width="104" height="132" rx="6" fill="#ffd800"/><rect x="40" y="28" width="104" height="132" rx="6" fill="#fff" stroke="${ink}" stroke-width="3"/><rect x="40" y="28" width="16" height="132" fill="#e02b20"/><g stroke="${ink}" stroke-width="3" opacity=".5"><path d="M68 56h62M68 76h62M68 96h46M68 116h58"/></g>`],
+ ['Stickers & labels','Cut to any shape',`<circle cx="70" cy="70" r="38" fill="#00aeef"/><circle cx="130" cy="94" r="34" fill="#ec008c"/><path d="M80 170 L100 120 L120 170 L70 134 H130Z" fill="#ffd800"/><circle cx="70" cy="70" r="14" fill="#fff"/>`],
+ ['Business cards','Make a first impression',`<rect x="22" y="48" width="130" height="80" rx="8" fill="${ink}" transform="rotate(-10 87 88)"/><rect x="48" y="80" width="130" height="80" rx="8" fill="#fff" stroke="#f7941d" stroke-width="3" transform="rotate(6 113 120)"/><path d="M64 110h60M64 128h42" stroke="${ink}" stroke-width="5" stroke-linecap="round" transform="rotate(6 113 120)"/>`],
+ ['Large format','Banners, posters & wraps',`<rect x="18" y="38" width="164" height="110" rx="6" fill="#e02b20"/><path d="M18 148 L74 90 L112 128 L140 100 L182 148Z" fill="#f7941d"/><circle cx="144" cy="70" r="14" fill="#ffd800"/><rect x="18" y="160" width="164" height="8" rx="4" fill="${ink}"/>`]
+];
+const ring=$('#ring');
+P.forEach((p,i)=>{
+  const d=document.createElement('div');d.className='panel';
+  d.innerHTML=`<svg viewBox="0 0 200 200">${p[2]}</svg><div><b>${p[0]}</b><small>${p[1]}</small></div>`;
+  ring.appendChild(d);
+});
+let ang=0,vel=.18,drag=false,lx=0;
+function layout(){
+  const w=ring.offsetWidth,R=Math.round(w/2/Math.tan(Math.PI/P.length))+30;
+  $$('.panel',ring).forEach((d,i)=>d.style.transform=`rotateY(${i*360/P.length}deg) translateZ(${R}px)`);
+}
+layout();addEventListener('resize',layout);
+const rs=$('#ringStage');
+rs.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;rs.setPointerCapture(e.pointerId)});
+rs.addEventListener('pointermove',e=>{if(!drag)return;vel=(e.clientX-lx)*.35;ang+=vel;lx=e.clientX});
+['pointerup','pointercancel'].forEach(ev=>rs.addEventListener(ev,()=>{drag=false}));
+(function spin(){
+  if(!drag){vel+=(.18-vel)*.03;ang+=vel}
+  ring.style.transform=`rotateX(-6deg) rotateY(${ang}deg)`;
+  requestAnimationFrame(spin);
+})();
+
+/* process cube (scroll-driven) */
+const proc=$('#process'),cube=$('#cube'),steps=$$('.step'),dots=$$('#dots i');
+let cur=0,target=0,active=-1;
+function pscroll(){
+  const r=proc.getBoundingClientRect();
+  const p=clamp(-r.top/(r.height-innerHeight),0,1);
+  target=p*270;
+}
+addEventListener('scroll',pscroll,{passive:true});pscroll();
+(function pl(){
+  cur+=(target-cur)*.08;
+  cube.style.transform=`rotateX(${-16+Math.sin(cur/40)*6}deg) rotateY(${-cur}deg)`;
+  const a=clamp(Math.round(cur/90),0,3);
+  if(a!==active){active=a;steps.forEach((s,i)=>s.classList.toggle('on',i===a));dots.forEach((d,i)=>d.classList.toggle('on',i===a))}
+  requestAnimationFrame(pl);
+})();
+
+/* quote → WhatsApp */
+$('#quote').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const t=`Hello Ark Printers! I'm ${f.get('name')}.\nI need: ${f.get('item')}${f.get('qty')?' (qty '+f.get('qty')+')':''}.\n${f.get('msg')||''}`;
+  open('https://wa.me/211921004501?text='+encodeURIComponent(t),'_blank');
+});
+})();
+</script>
+</body>
+</html>
